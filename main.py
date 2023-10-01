@@ -40,5 +40,11 @@ while GAME_IS_ON:
         GAME_IS_ON = False
         score.game_over()
 
+    # Detect body
+    for segment in snake.snake[1:]:
+        if snake.head.distance(segment) < 10:
+            GAME_IS_ON = False
+            score.game_over()
+
 
 screen.exitonclick()
